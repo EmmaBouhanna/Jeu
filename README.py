@@ -30,6 +30,8 @@ grid = np.zeros((60,120))#salle1
 for i in range (3,23):
     grid[2,i]=1
     grid[5,i]=1
+    grid[3,i] = 4
+    grid[4,i]= 4
 grid[3,3]=1
 grid[4,3]=1
 grid[4,22]=1
@@ -41,6 +43,9 @@ for i in range(28,70): #salle2
 for j in range (15,31):
     grid[j,28] = 1
     grid[j,69] = 1
+for a in range(29,69):
+    for b in range(16,30):
+        grid[b,a]=4
 grid[15,33]=2
 grid[15,68]=2
 grid[30,55]=2
@@ -56,6 +61,9 @@ for i in range(65, 91):
 for j in range(1,14):
     grid[j,65]=1
     grid[j,90]=1
+for a in range(66,90):
+    for b in range(2,13):
+        grid[b,a]=4
 grid[13,68]=2
 for k in range(14,15):
     grid[k,68]=3
@@ -66,6 +74,9 @@ for j in range(38, 54):
 for i in range(40,66):
     grid[38,i]=1
     grid[53,i]=1
+for a in range(41,65):
+    for b in range(39,53):
+        grid[b,a]=4
 grid[38,55]=2
 grid[40,65]=2
 for k in range(31,38):
@@ -79,6 +90,9 @@ for j in range(35,46):
     grid[j,110]=1
 grid[40,80] = 2
 grid[35,83] = 2
+for a in range(81,110):
+    for b in range(36,45):
+        grid[b,a]=4
 for k in range(66,80):
     grid[40,k]=3
 for k in range(34,35):
@@ -131,7 +145,7 @@ while running:
     if t>200:
         t=0
         draw_level(grid)
-        perso = pygame.image.load("superhero-drawing-001.jpg").convert()
+        perso = pygame.image.load().convert()
         screen.blit(perso, (4,5))
         pygame.display.update()
         
