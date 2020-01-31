@@ -36,12 +36,13 @@ running= True
 while running:
   dt=clock.tick(FPS)
   t+=dt
-  screen.fill(RED)
+  screen.fill(BLACK)
 
   for event in pygame.event.get(KEYDOWN):
     if event.key == K_q:
-      sys.exit()
       # on quitte le programme lors d'un appui sur Q
+      sys.exit()
+
   if t>200:
     t=0
     pos = 1, 1
