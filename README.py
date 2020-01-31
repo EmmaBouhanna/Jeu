@@ -13,7 +13,6 @@ YELLOW = (255, 255, 0)
 RED = (255, 0, 0)
 
 clock = pygame.time.Clock()
-
 name = input("Enter the name of your character : ")
 screen = pygame.display.set_mode((1200, 600))
 
@@ -29,8 +28,15 @@ while running:
   for event in pygame.event.get(KEYDOWN):
     if event.key == K_q:
       # on quitte le programme lors d'un appui sur Q
+        sys.exit()
 
-"""
+
+class Niveau:
+    def __init__(self):
+        self.nbre_pieces = random.randint(3, 7)
+        
+
+
 class Monstre:
     def __init__(self,force,vie=True):
         self.force=force
@@ -66,8 +72,8 @@ class Chevalier(Monstre):
     
 
 class Objet:
-    def __init__(self, bonus, piece): # le type de la pièce vient de la classe de sandra
-        self.donne = bonus
+    def __init__(self, piece): # le type de la pièce vient de la classe de sandra
+        self.donne = 0
         self.localisation = (random.randint(len(piece.largeur), random.randint(len(piece.longueur)))
 
 
