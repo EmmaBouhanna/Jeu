@@ -111,24 +111,21 @@ FPS = 60 #nombre d'images par seconde
 running= True
 
 while running:
-  dt=clock.tick(FPS)
-  t+=dt
-  screen.fill(BLACK)
-
-# Ceci ne fait pas partie de la classe a priori
-for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-        running = False   
-
-for event in pygame.event.get(KEYDOWN):
-    if event.key == K_q:
-      # on quitte le programme lors d'un appui sur Q
-
-
-if t>200:
-    t=0
-    draw_level(grid)
-    pygame.display.update()
+    dt=clock.tick(FPS)
+    t+=dt
+    screen.fill(BLACK)
+    """
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False  """ 
+    for event in pygame.event.get(KEYDOWN):
+        if event.key == K_q:
+            sys.exit()
+        # on quitte le programme lors d'un appui sur Q
+    if t>200:
+        t=0
+        draw_level(grid)
+        pygame.display.update()
 
 class Monstre:
     def __init__(self,force,vie=True):
