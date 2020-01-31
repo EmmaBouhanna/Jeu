@@ -76,14 +76,16 @@ class Personnage:
         if el == 14:
             a = Armure()
             grid[x,y] = 4
-            self.defense += armure.donne
+            self.defense += a.donne
             self.pos[0], self.pos[1] = x, y
         if el == 15:
             a = Arme()
             grid[x,y] = 4
             self.sac.append(a)
-            self.force += arme.donne
+            self.force += a.donne
             self.pos[0], self.pos[1] = x, y
+
+
 
 
 
