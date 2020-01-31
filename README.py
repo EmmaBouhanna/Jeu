@@ -19,17 +19,18 @@ name = input("Enter the name of your character : ")
 screen = pygame.display.set_mode((1200, 600))
 
 t=0
+FPS = 60 #nombre d'images par seconde
 
 running= True
 
 while running:
-  dt=clock.tick(60)
+  dt=clock.tick(FPS)
   t+=dt
-  screen.fill(BLACK)
+  screen.fill(RED)
 
   for event in pygame.event.get(KEYDOWN):
     if event.key == K_q:
-      sys.exit(0)
+      sys.exit()
       # on quitte le programme lors d'un appui sur Q
 
 
