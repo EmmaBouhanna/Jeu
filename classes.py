@@ -1,3 +1,4 @@
+import random
 class Monstre:
     def __init__(self):
         self.force = None
@@ -84,8 +85,3 @@ class Personnage:
             self.sac.append(a)
             self.force += a.donne
             self.pos[0], self.pos[1] = x, y
-
-
-
-
-
