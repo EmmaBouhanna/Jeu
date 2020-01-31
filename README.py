@@ -183,10 +183,10 @@ name = input("Enter the name of your character : ")
 
 screen = pygame.display.set_mode((CELL_SIZE[1]*CELL_NUMBER[1], CELL_SIZE[0]*CELL_NUMBER[0]))
 
-## Texte
+""" Texte
 
 font = pygame.font.Font('Roboto-Bold.ttf', 48)
-text = font.render(f'Hello', True, (0, 0, 0))
+text = font.render(f'Hello', True, (0, 0, 0))"""
 
 
 t=0

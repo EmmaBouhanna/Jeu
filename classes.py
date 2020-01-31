@@ -14,34 +14,29 @@ class Chevalier(Monstre):
         
 
 class Objet:
-    def __init__(self, piece): # le type de la pièce vient de la classe de sandra
+    def __init__(self): # le type de la pièce vient de la classe de sandra
         self.donne = 0
-        self.localisation = (random.randint(len(piece.largeur), random.randint(len(piece.longueur)))
+        
 
 
 class Potion(Objet):
-    def __init__(self, piece):
+    def __init__(self):
         self.donne = 1 # point de vie
-        self.localisation = Objet.localisation
 class Nourriture(Objet):
-    def __init__(self,piece):
+    def __init__(self):
         self.donne = 1 # point de force 
-        self.localisation = Objet.localisation
 
 class Argent(Objet):
     def __init__(self):
         self.donne = random.randint(5, 11)
-        self.localisation = Objet.localisation
 
 
 class Armure(Objet):
-    def __init__(self, piece):
+    def __init__(self):
         self.donne = random.randint(1,5)
-        self.localisation = Objet.localisation
 
 class Arme(Objet):
-    def __init(self, piece)
-        self.localisation = Objet.localisation
+    def __init__(self):
         self.donne = random.randint(4, 6) 
 
 
@@ -53,7 +48,7 @@ class Personnage:
         self.defense = 10
         self.sac = []
         self.armes = []
-        self.pos = [2, 3]
+        self.pos = [18, 40]
         self.tirelire = 0
           
         
@@ -61,11 +56,11 @@ class Personnage:
         x = self.pos[0]+dx
         y = self.pos[1]+dy
         el = grid[x, y]
-        if ((el == 0) or (el == 2) or (el == 3)):
+        if el == 2 or el == 3 or el == 4:
             self.pos[0], self.pos[1] = x, y
         if el == 11:
             potion = Potion()
-            self.vie += potion.donne
+            self.pt_vie += potion.donne
             self.pos[0], self.pos[1] = x, y
         if el == 12:
             nourriture = Nourriture()
