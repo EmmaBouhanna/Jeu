@@ -22,7 +22,10 @@ YELLOW = (255, 255, 0)
 CELL_SIZE = (10, 10)
 CELL_NUMBER = (60, 120)
 
-Grid = 
+Grid = np.zeros(CELL_NUMBER)
+
+for i in range(10):
+    Grid[3,i]=1
 
 def draw_cell(pos, color=WHITE):
   x,y=pos
