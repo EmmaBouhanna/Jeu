@@ -131,3 +131,25 @@ class Personnage:
             
         else:
             return False
+
+
+
+
+
+
+
+# Ceci ne fait pas partie de la classe a priori
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        running = False   
+    elif event.type == pygame.KEYDOWN:
+        if event.key == K_q:
+            running = False
+        elif event.key == K_UP:
+            dx, dy = (0, -1)
+        elif event.key == K_RIGHT:
+            dx, dy = (1, 0)
+        elif event.key == K_DOWN:
+            dx, dy = (0, 1)
+        elif event.key == K_LEFT:
+            dx, dy = (-1, 0)
