@@ -102,7 +102,30 @@ for k in range(34,35):
 for l in range(56,84):
     grid[33,l]=3
 
+#les potions
+'''
+a = 5
+while a>0:
+    (i,j)=(random.randint(0,59),random.randint(0,119))
+    if grid[i,j]==4:
+        grid[i,j]="P"
+        a=a-1
 
+#nourriture
+b = 5
+while b>0:
+    (i,j)=(random.randint(0,59),random.randint(0,119))
+    if grid[i,j]==4:
+        grid[i,j]="N"
+        b=b-1
+#argent
+c = 5
+while c>0:
+    (i,j)=(random.randint(0,59),random.randint(0,119))
+    if grid[i,j]==4:
+        grid[i,j]="O"
+        c=c-1
+'''
 def draw_cell(pos, color=WHITE):
   x,y=pos
   for line in range(CELL_SIZE[1]):
@@ -133,34 +156,34 @@ t=0
 FPS = 60 #nombre d'images par seconde
 
 running= True
-
+draw_level(grid)
+pos = 5,4
+draw_cell(pos,BLUE)
 while running:
     dt=clock.tick(FPS)
     t+=dt
     screen.fill(BLACK)
 
-    """
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False  """ 
-    for event in pygame.event.get(KEYDOWN):
-        if event.key == K_q:
-            sys.exit()
-        elif event.key==K_UP:
-            dx,dy=0,-1
-        elif event.key==K_DOWN:
-            dx,dy=0,1
-        elif event.key==K_LEFT:
-            dx,dy=-1,0
-        elif event.key==K_RIGHT:
-            dx,dy=1,0
+            running = False  
+        elif event.type == KEYDOWN:
+            if event.key == K_q:
+                running = False
+            elif event.key==K_UP:
+                dx,dy=0,-1
+            elif event.key==K_DOWN:
+                dx,dy=0,1
+            elif event.key==K_LEFT:
+                dx,dy=-1,0
+            elif event.key==K_RIGHT:
+                dx,dy=1,0
         # on quitte le programme lors d'un appui sur Q
-    if t>200:
-        t=0
-        draw_level(grid)
-        perso = pygame.image.load().convert()
-        screen.blit(perso, (4,5))
-        pygame.display.update()
+    print('coucou')
+    t = 0
+    t += clock.tick()
+    pygame.display.update()
         
 
  
