@@ -158,6 +158,7 @@ while running:
         # on quitte le programme lors d'un appui sur Q
     if t>200:
         t=0
+        new_pos = Personnage.pos
         draw_level(grid)
         perso = pygame.image.load().convert()
         screen.blit(perso, (4,5))
