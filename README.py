@@ -21,6 +21,7 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
+CYAN = (158, 255, 238)
 
 # Grid 
 CELL_SIZE = (10, 10)
@@ -105,6 +106,8 @@ def draw_level(Grid):
                 draw_cell(pos, RED)
             elif grid[l,c] == 3 : #couloir
                 draw_cell(pos, GREY)
+            elif grid[l,c] == 4 : #intérieur des salles
+                draw_cell(pos, CYAN)
 
 clock = pygame.time.Clock()
 name = input("Enter the name of your character : ")
