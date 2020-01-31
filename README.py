@@ -8,6 +8,11 @@ import numpy as np
 
 pygame.init()
 
+for event in pygame.event.get():   
+
+    if event.type == QUIT:    
+
+        pygame.quit()
 # Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -39,9 +44,9 @@ for j in range (15,31):
 grid[15,33]=2
 grid[15,68]=2
 grid[30,55]=2
-for k in range(22,34):
+for k in range(23,33):
     grid[3,k]=3
-for l in range(3,16):
+for l in range(3,15):
     grid[l,33]=3
 
 
@@ -52,7 +57,7 @@ for j in range(1,14):
     grid[j,65]=1
     grid[j,90]=1
 grid[13,68]=2
-for k in range(13,16):
+for k in range(14,15):
     grid[k,68]=3
 
 for j in range(38, 54):
@@ -63,7 +68,7 @@ for i in range(40,66):
     grid[53,i]=1
 grid[38,55]=2
 grid[40,65]=2
-for k in range(30,39):
+for k in range(31,38):
     grid[k,55]=3
 
 for i in range (80,111):
@@ -74,12 +79,13 @@ for j in range(35,46):
     grid[j,110]=1
 grid[40,80] = 2
 grid[35,83] = 2
-for k in range(65,81):
+for k in range(66,80):
     grid[40,k]=3
-for k in range(33,36):
+for k in range(34,35):
     grid[k,83]=3
-for l in range(55,84):
+for l in range(56,84):
     grid[33,l]=3
+
 
 def draw_cell(pos, color=WHITE):
   x,y=pos
@@ -92,7 +98,7 @@ def draw_cell(pos, color=WHITE):
 def draw_level(Grid):
     for l in range(60):
         for c in range(120):
-            pos = l, c
+            pos = c, l
             if Grid[l,c] == 1 : #mur
                 draw_cell(pos)
             elif Grid[l,c] == 2 : #porte
@@ -127,6 +133,7 @@ while running:
         draw_level(grid)
         pygame.display.update()
 
+ 
 class Monstre:
     def __init__(self,force,vie=True):
         self.force
