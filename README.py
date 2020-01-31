@@ -154,7 +154,7 @@ screen = pygame.display.set_mode((CELL_SIZE[1]*CELL_NUMBER[1], CELL_SIZE[0]*CELL
 
 t=0
 FPS = 60 #nombre d'images par seconde
-
+screen.fill(BLACK)
 running= True
 draw_level(grid)
 pos = 5,4
@@ -162,14 +162,13 @@ draw_cell(pos,BLUE)
 while running:
     dt=clock.tick(FPS)
     t+=dt
-    screen.fill(BLACK)
-
-    
     for event in pygame.event.get():
+        print(event)
         if event.type == pygame.QUIT:
+            print('coucou')
             running = False  
         elif event.type == KEYDOWN:
-            if event.key == K_q:
+            if event.key == 97:
                 running = False
             elif event.key==K_UP:
                 dx,dy=0,-1
@@ -180,9 +179,6 @@ while running:
             elif event.key==K_RIGHT:
                 dx,dy=1,0
         # on quitte le programme lors d'un appui sur Q
-    print('coucou')
-    t = 0
-    t += clock.tick()
     pygame.display.update()
         
 

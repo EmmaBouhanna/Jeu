@@ -2,7 +2,6 @@ class Monstre:
     def __init__(self,force,vie=True):
         self.force
     
-    def deplacement()
     def vaincu
         self.vie
         self.donne_force
@@ -51,9 +50,11 @@ class Personnage:
     def __init__(self):
         self.force = 10
         self.pt_vie = 3
+        self.defense = 10
         self.sac = []
         self.armes = []
-        self.pos = [2, 3] 
+        self.pos = [2, 3]
+        self.tirelire = 0
           
         
     def move_me(self, grid, dx, dy):
@@ -62,10 +63,27 @@ class Personnage:
         el = grid[x, y]
         if ((el == 0) or (el == 2) or (el == 3)):
             self.pos[0], self.pos[1] = x, y
-        
+        if el == 11:
+            potion = Potion()
+            self.vie += potion.donne
+            self.pos[0], self.pos[1] = x, y
+        if el == 12:
+            nourriture = Nourriture()
+            self.force += nourriture.donne
+            self.pos[0], self.pos[1] = x, y
+        if el == 13:
+            argent = Argent()
+            self.tirelire += argent.donne
+            self.pos[0], self.pos[1] = x, y
+        if el == 14:
+            a = Armure()
+            self.defense += armure.donne
+            self.pos[0], self.pos[1] = x, y
+        if el == 15:
+            a = Arme()
+            self.sac.append(a)
+            self.force += arme.donne
+            self.pos[0], self.pos[1] = x, y
 
-            
-        else:
-            return False
 
 
