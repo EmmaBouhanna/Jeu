@@ -1,11 +1,10 @@
-# Jeu
+### Jeu
 
 import sys
 import pygame
 from pygame.locals import *
 import random
 import numpy as np
-from classes import *
 
 pygame.init()
 
@@ -14,7 +13,7 @@ for event in pygame.event.get():
     if event.type == QUIT:    
 
         pygame.quit()
-# Colors
+## Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREY = (150, 150, 150)
@@ -24,8 +23,9 @@ BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 CYAN = (158, 255, 238)
 PURPLE = (121, 28, 248)
+BROWN = (167, 103, 38)
 
-# Grid 
+## Grid 
 CELL_SIZE = (10, 10)
 CELL_NUMBER = (60, 120)
 grid = np.zeros((60,120))#salle1
@@ -160,54 +160,59 @@ def draw_level(Grid):
                 draw_cell(pos, RED)
             elif grid[l,c] == 3 : #couloir
                 draw_cell(pos, GREY)
-            elif grid[l,c] == 4 or grid[l,c]>10 : #intérieur des salles et objets
+            elif grid[l,c] == 4 : #intérieur des salles et objets
                 draw_cell(pos, CYAN)
+            elif grid[l,c] == 11 : 
+                draw_cell(pos, PURPLE)
+                """p = pygame.image.load("Potion-for-dreamless-sleep-lrg.png").convert_alpha()
+                screen.blit(p, (c, l))
+                pygame.display.flip()"""
+            elif grid[l,c] == 12 : 
+                draw_cell(pos, BROWN)
+            elif grid[l,c] == 13 : 
+                draw_cell(pos, YELLOW)
+            elif grid[l,c] == 14 : 
+                draw_cell(pos, GREY)
+            elif grid[l,c] == 15 : 
+                draw_cell(pos, BLACK)
+
+
 
 clock = pygame.time.Clock()
 name = input("Enter the name of your character : ")
 
 screen = pygame.display.set_mode((CELL_SIZE[1]*CELL_NUMBER[1], CELL_SIZE[0]*CELL_NUMBER[0]))
 
+""" Texte
+
+font = pygame.font.Font('Roboto-Bold.ttf', 48)
+text = font.render(f'Hello', True, (0, 0, 0))"""
+
+
 t=0
-FPS = 10 #nombre d'images par seconde
+FPS = 60 #nombre d'images par seconde
 screen.fill(BLACK)
 running= True
-player = Personnage()
-dx,dy=0,0
-
+draw_level(grid)
+pos = 5,4
+draw_cell(pos,BLUE)
 while running:
     dt=clock.tick(FPS)
     t+=dt
     for event in pygame.event.get():
-        #draw_cell((player.pos[1],player.pos[0]),BLUE)
         if event.type == pygame.QUIT:
-            running = False 
-        elif event.type == KEYUP:
-            if event.key==K_UP:
-                dy,dx=0,0
-            elif event.key==K_DOWN:
-                dy,dx=0,0
-            elif event.key==K_LEFT:
-                dy,dx=0,0
-            elif event.key==K_RIGHT:
-                dy,dx=0,0
+            running = False  
         elif event.type == KEYDOWN:
             if event.key == 97:
                 running = False
             elif event.key==K_UP:
-                dy,dx=0,-1
+                dx,dy=0,-1
             elif event.key==K_DOWN:
-                dy,dx=0,1
+                dx,dy=0,1
             elif event.key==K_LEFT:
-                dy,dx=-1,0
+                dx,dy=-1,0
             elif event.key==K_RIGHT:
-                dy,dx=1,0
-    #draw_cell((player.pos[1],player.pos[0]),BLACK)
-    draw_level(grid)
-    player.move_me(grid,dx,dy)
-    draw_cell((player.pos[1],player.pos[0]),BLUE)
-    pygame.display.update()
-        # on quitte le programme lors d'un appui sur Q
+                dx,dy=1,0
     pygame.display.update()
         
 
