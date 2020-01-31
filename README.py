@@ -124,16 +124,10 @@ for event in pygame.event.get(KEYDOWN):
     if event.key == K_q:
       # on quitte le programme lors d'un appui sur Q
 
+
 if t>200:
     t=0
-    
-    print(grid)
-    for i in range()
-    draw_cell(1,1)
-      sys.exit()
-if t>200:
-    t=0
-    draw_level(Grid)
+    draw_level(grid)
     pygame.display.update()
 
 class Monstre:
