@@ -142,6 +142,7 @@ while running:
     player = Personnage()
     if t>200:
         t=0
+        new_pos = Personnage.pos
         draw_level(grid)
         pygame.display.update()
 
