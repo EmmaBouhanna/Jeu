@@ -4,17 +4,27 @@ import sys
 import pygame
 from pygame.locals import *
 import random
-from itertools import product
 import numpy as np
 
 pygame.init()
 
+# Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-YELLOW = (255, 255, 0)
+GREY = (150, 150, 150)
 RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+YELLOW = (255, 255, 0)
 
+# Grid 
 CELL_SIZE = (10, 10)
+CELL_NUMBER = (60, 120)
+
+Grid = np.zeros(CELL_NUMBER)
+
+for i in range(10):
+    Grid[3,i]=1
 
 def draw_cell(pos, color=WHITE):
   x,y=pos
@@ -24,10 +34,21 @@ def draw_cell(pos, color=WHITE):
       screen_pos=(CELL_SIZE[0]*x+col, CELL_SIZE[1]*y+line)
       screen.set_at(screen_pos,color)
 
+def draw_level(Grid):
+    for l in range(60):
+        for c in range(120):
+            pos = l, c
+            if Grid[l,c] == 1 : #mur
+                draw_cell(pos)
+            elif Grid[l,c] == 2 : #porte
+                draw_cell(pos, BLUE)
+            elif Grid[l,c] == 3 : #couloir
+                draw_cell(pos, GREY)
+
 clock = pygame.time.Clock()
 name = input("Enter the name of your character : ")
 
-screen = pygame.display.set_mode((1200, 600))
+screen = pygame.display.set_mode((CELL_SIZE[1]*CELL_NUMBER[1], CELL_SIZE[0]*CELL_NUMBER[0]))
 
 t=0
 FPS = 60 #nombre d'images par seconde
@@ -37,7 +58,7 @@ running= True
 while running:
   dt=clock.tick(FPS)
   t+=dt
-  screen.fill(RED)
+  screen.fill(BLACK)
 
 # Ceci ne fait pas partie de la classe a priori
 for event in pygame.event.get():
@@ -45,10 +66,9 @@ for event in pygame.event.get():
         running = False   
 
   for event in pygame.event.get(KEYDOWN):
+for event in pygame.event.get(KEYDOWN):
     if event.key == K_q:
-      sys.exit()
       # on quitte le programme lors d'un appui sur Q
-
 t =203
 if t>200:
     t=0
@@ -114,8 +134,11 @@ if t>200:
     print(grid)
     for i in range()
     draw_cell(1,1)
+      sys.exit()
+if t>200:
+    t=0
+    draw_level(Grid)
     pygame.display.update()
-
 
 class Monstre:
     def __init__(self,force,vie=True):
