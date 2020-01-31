@@ -53,24 +53,17 @@ class Personnage:
         self.pt_vie = 3
         self.sac = []
         self.armes = []
-        self.pos = [] 
-    
-    def __repr__(self):
-        print("@")
-    
-    def attack(self):
+        self.pos = [2, 3] 
           
         
-    def move_me(self, dx, dy):
+    def move_me(self, grid, dx, dy):
         x = self.pos[0]+dx
         y = self.pos[1]+dy
-        el = grid.get_el(x*grid.cell_size, (y)*grid.cell_size)
+        el = grid[x, y]
+        if ((el == 0) or (el == 2) or (el == 3)):
+            self.pos[0], self.pos[1] = x, y
         
-        if el == "." or el == "+" or el == "#":
-            self.pos[0] = x
-            self.pos[1] = y 
-            return True
-        # if el == "B" or el == "K":
+
             
         else:
             return False
