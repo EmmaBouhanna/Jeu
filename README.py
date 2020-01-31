@@ -194,26 +194,42 @@ t=0
 FPS = 10 #nombre d'images par seconde
 screen.fill(BLACK)
 running= True
-draw_level(grid)
-pos = 5,4
-draw_cell(pos,BLUE)
+player = Personnage()
+dx,dy=0,0
+
 while running:
     dt=clock.tick(FPS)
     t+=dt
     for event in pygame.event.get():
+        #draw_cell((player.pos[1],player.pos[0]),BLUE)
         if event.type == pygame.QUIT:
-            running = False  
+            running = False 
+        elif event.type == KEYUP:
+            if event.key==K_UP:
+                dy,dx=0,0
+            elif event.key==K_DOWN:
+                dy,dx=0,0
+            elif event.key==K_LEFT:
+                dy,dx=0,0
+            elif event.key==K_RIGHT:
+                dy,dx=0,0
         elif event.type == KEYDOWN:
             if event.key == 97:
                 running = False
             elif event.key==K_UP:
-                dx,dy=0,-1
+                dy,dx=0,-1
             elif event.key==K_DOWN:
-                dx,dy=0,1
+                dy,dx=0,1
             elif event.key==K_LEFT:
-                dx,dy=-1,0
+                dy,dx=-1,0
             elif event.key==K_RIGHT:
-                dx,dy=1,0
+                dy,dx=1,0
+    #draw_cell((player.pos[1],player.pos[0]),BLACK)
+    draw_level(grid)
+    player.move_me(grid,dx,dy)
+    draw_cell((player.pos[1],player.pos[0]),BLUE)
+    pygame.display.update()
+        # on quitte le programme lors d'un appui sur Q
     pygame.display.update()
         
 
