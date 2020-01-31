@@ -32,3 +32,29 @@ class Objet:
     def __init__(self, bonus, piece): # le type de la pièce vient de la classe de sandra
         self.donne = bonus
         self.localisation = (random.randint(len(piece.largeur), random.randint(len(piece.longueur)))
+
+
+class Potion(Objet):
+    def __init__(self, piece):
+        self.donne = 1 # point de vie
+        self.localisation = Objet.localisation
+class Nourriture(Objet):
+    def __init__(self,piece):
+        self.donne = 1 # point de force 
+        self.localisation = Objet.localisation
+
+class Argent(Objet):
+    def __init__(self):
+        self.donne = random.randint(5, 11)
+        self.localisation = Objet.localisation
+
+
+class Armure(Objet):
+    def __init__(self, piece):
+        self.donne = random.randint(1,5)
+        self.localisation = Objet.localisation
+
+class Arme(Objet):
+    def __init(self, piece)
+        self.localisation = Objet.localisation
+        self.donne = random.randint(4, 6)
