@@ -8,6 +8,11 @@ import numpy as np
 
 pygame.init()
 
+for event in pygame.event.get():   
+
+    if event.type == QUIT:    
+
+        pygame.quit()
 # Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -39,9 +44,9 @@ for j in range (15,31):
 grid[15,33]=2
 grid[15,68]=2
 grid[30,55]=2
-for k in range(22,34):
+for k in range(23,33):
     grid[3,k]=3
-for l in range(3,16):
+for l in range(3,15):
     grid[l,33]=3
 
 
@@ -52,7 +57,7 @@ for j in range(1,14):
     grid[j,65]=1
     grid[j,90]=1
 grid[13,68]=2
-for k in range(13,16):
+for k in range(14,15):
     grid[k,68]=3
 
 for j in range(38, 54):
@@ -63,7 +68,7 @@ for i in range(40,66):
     grid[53,i]=1
 grid[38,55]=2
 grid[40,65]=2
-for k in range(30,39):
+for k in range(31,38):
     grid[k,55]=3
 
 for i in range (80,111):
@@ -74,11 +79,11 @@ for j in range(35,46):
     grid[j,110]=1
 grid[40,80] = 2
 grid[35,83] = 2
-for k in range(65,81):
+for k in range(66,80):
     grid[40,k]=3
-for k in range(33,36):
+for k in range(34,35):
     grid[k,83]=3
-for l in range(55,84):
+for l in range(56,84):
     grid[33,l]=3
 
 
@@ -137,84 +142,7 @@ while running:
         draw_level(grid)
         pygame.display.update()
 
-class Monstre:
-    def __init__(self,force,vie=True):
-        self.force
-    
-    def deplacement()
-    def vaincu
-        self.vie
-        self.donne_force
-        self.donne_vie
-    def avaincu
-        self.dommages=
-
-
-class Chevalier(Monstre):
-    
-
-class Objet:
-    def __init__(self, piece): # le type de la pièce vient de la classe de sandra
-        self.donne = 0
-        self.localisation = (random.randint(len(piece.largeur), random.randint(len(piece.longueur)))
-
-
-class Potion(Objet):
-    def __init__(self, piece):
-        self.donne = 1 # point de vie
-        self.localisation = Objet.localisation
-class Nourriture(Objet):
-    def __init__(self,piece):
-        self.donne = 1 # point de force 
-        self.localisation = Objet.localisation
-
-class Argent(Objet):
-    def __init__(self):
-        self.donne = random.randint(5, 11)
-        self.localisation = Objet.localisation
-
-
-class Armure(Objet):
-    def __init__(self, piece):
-        self.donne = random.randint(1,5)
-        self.localisation = Objet.localisation
-
-class Arme(Objet):
-    def __init(self, piece)
-        self.localisation = Objet.localisation
-        self.donne = random.randint(4, 6) 
-
-
-
-class Personnage:
-    def __init__(self):
-        self.force = 10
-        self.pt_vie = 3
-        self.sac = []
-        self.armes = []
-        self.pos = [] 
-    
-    def __repr__(self):
-        print("@")
-    
-    def attack(self):
-          
-        
-    def move_me(self, dx, dy):
-        x = self.pos[0]+dx
-        y = self.pos[1]+dy
-        el = grid.get_el(x*grid.cell_size, (y)*grid.cell_size)
-        
-        if el == "." or el == "+" or el == "#":
-            self.pos[0] = x
-            self.pos[1] = y 
-            return True
-        # if el == "B" or el == "K":
-            
-        else:
-            return False
-
-
+ 
 
 
 
