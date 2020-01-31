@@ -13,7 +13,7 @@ WHITE = (255, 255, 255)
 YELLOW = (255, 255, 0)
 RED = (255, 0, 0)
 
-CELL_SIZE = (20, 20)
+CELL_SIZE = (10, 10)
 
 def draw_cell(pos, color=WHITE):
   x,y=pos
