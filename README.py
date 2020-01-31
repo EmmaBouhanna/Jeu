@@ -24,7 +24,8 @@ BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 CYAN = (158, 255, 238)
 PURPLE = (121, 28, 248)
-BROWN = ()
+BROWN = (167, 103, 38)
+DARK_RED = (115, 8, 0)
 
 # Grid 
 CELL_SIZE = (10, 10)
@@ -163,6 +164,12 @@ def draw_level(Grid):
                 draw_cell(pos, GREY)
             elif grid[l,c] == 4 : #intérieur des salles
                 draw_cell(pos, CYAN)
+            elif grid[l,c] == 11 : #potion
+                draw_cell(pos, PURPLE)
+            elif grid[l,c] == 12 : #nourriture
+                draw_cell(pos, BROWN)
+            elif grid[l,c] == 13 : #argent
+                draw_cell(pos, YELLOW)
             
 
 clock = pygame.time.Clock()
