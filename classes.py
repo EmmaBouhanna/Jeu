@@ -1,17 +1,17 @@
 class Monstre:
-    def __init__(self,force,vie=True):
-        self.force
+    def __init__(self):
+        self.force = None
+        self.vie = True
     
-    def vaincu
-        self.vie
-        self.donne_force
-        self.donne_vie
-    def avaincu
-        self.dommages=
+    def vaincu(self):
+        self.vie = False
 
 
 class Chevalier(Monstre):
-    
+    def __init__(self):
+        super().__init__(self)
+        self.force = 10
+        
 
 class Objet:
     def __init__(self, piece): # le type de la pièce vient de la classe de sandra
