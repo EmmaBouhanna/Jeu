@@ -34,14 +34,17 @@ class Objet:
         self.localisation = (random.randint(len(piece.largeur), random.randint(len(piece.longueur)))
 
 
+
 class Potion(Objet):
     def __init__(self, piece):
         self.donne = 1 # point de vie
         self.localisation = Objet.localisation
+
 class Nourriture(Objet):
     def __init__(self,piece):
         self.donne = 1 # point de force 
         self.localisation = Objet.localisation
+
 
 class Argent(Objet):
     def __init__(self):
