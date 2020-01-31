@@ -1,5 +1,6 @@
 # Jeu
 
+
 import sys
 import pygame
 from pygame.locals import *
@@ -31,13 +32,14 @@ while running:
     if event.key == K_q:
       sys.exit()
       # on quitte le programme lors d'un appui sur Q
-        sys.exit()
+    
 
 
 class Niveau:
     def __init__(self):
         self.nbre_pieces = random.randint(3, 7)
         
+
 
 
 
