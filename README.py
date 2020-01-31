@@ -103,12 +103,12 @@ for l in range(56,84):
     grid[33,l]=3
 
 #les potions
-'''
+
 a = 5
 while a>0:
     (i,j)=(random.randint(0,59),random.randint(0,119))
     if grid[i,j]==4:
-        grid[i,j]="P"
+        grid[i,j]=11
         a=a-1
 
 #nourriture
@@ -116,16 +116,31 @@ b = 5
 while b>0:
     (i,j)=(random.randint(0,59),random.randint(0,119))
     if grid[i,j]==4:
-        grid[i,j]="N"
+        grid[i,j]=12
         b=b-1
 #argent
 c = 5
 while c>0:
     (i,j)=(random.randint(0,59),random.randint(0,119))
     if grid[i,j]==4:
-        grid[i,j]="O"
+        grid[i,j]=13
         c=c-1
-'''
+
+#armure
+d = 5
+while d>0:
+    (i,j)=(random.randint(0,59),random.randint(0,119))
+    if grid[i,j]==4:
+        grid[i,j]=14
+        d=d-1
+#arme
+e = 5
+while e>0:
+    (i,j)=(random.randint(0,59),random.randint(0,119))
+    if grid[i,j]==4:
+        grid[i,j]=15
+        e=e-1
+
 def draw_cell(pos, color=WHITE):
   x,y=pos
   for line in range(CELL_SIZE[1]):
