@@ -131,7 +131,10 @@ while running:
     if t>200:
         t=0
         draw_level(grid)
+        perso = pygame.image.load("superhero-drawing-001.jpg").convert()
+        screen.blit(perso, (4,5))
         pygame.display.update()
+        
 
  
 
