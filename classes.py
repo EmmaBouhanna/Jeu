@@ -60,22 +60,27 @@ class Personnage:
             self.pos[0], self.pos[1] = x, y
         if el == 11:
             potion = Potion()
+            grid[x,y] = 4
             self.pt_vie += potion.donne
             self.pos[0], self.pos[1] = x, y
         if el == 12:
             nourriture = Nourriture()
+            grid[x,y] = 4
             self.force += nourriture.donne
             self.pos[0], self.pos[1] = x, y
         if el == 13:
             argent = Argent()
+            grid[x,y] = 4
             self.tirelire += argent.donne
             self.pos[0], self.pos[1] = x, y
         if el == 14:
             a = Armure()
+            grid[x,y] = 4
             self.defense += armure.donne
             self.pos[0], self.pos[1] = x, y
         if el == 15:
             a = Arme()
+            grid[x,y] = 4
             self.sac.append(a)
             self.force += arme.donne
             self.pos[0], self.pos[1] = x, y
