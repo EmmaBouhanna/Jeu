@@ -14,8 +14,7 @@ RED = (255, 0, 0)
 
 clock = pygame.time.Clock()
 
-"""name = input("Enter the name of your character : ")"""
-
+name = input("Enter the name of your character : ")
 screen = pygame.display.set_mode((1200, 600))
 
 t=0
