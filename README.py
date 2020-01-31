@@ -27,7 +27,11 @@ while running:
   t+=dt
   screen.fill(BLACK)
 
+  for event in pygame.event.get(KEYDOWN):
+    if event.key == K_q:
+      # on quitte le programme lors d'un appui sur Q
 
+"""
 class Monstre:
     def __init__(self,force,vie=True):
         self.force
@@ -73,4 +77,4 @@ class Armure(Objet):
 class Arme(Objet):
     def __init(self, piece)
         self.localisation = Objet.localisation
-        self.donne = random.randint(4, 6)
+        self.donne = random.randint(4, 6) """
