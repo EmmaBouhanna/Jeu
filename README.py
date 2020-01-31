@@ -27,3 +27,8 @@ class Monstre:
 
 class Chevalier(Monstre):
     
+
+class Objet:
+    def __init__(self, bonus, piece): # le type de la pièce vient de la classe de sandra
+        self.donne = bonus
+        self.localisation = (random.randint(len(piece.largeur), random.randint(len(piece.longueur)))
