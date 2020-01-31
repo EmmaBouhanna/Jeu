@@ -160,7 +160,7 @@ def draw_level(Grid):
                 draw_cell(pos, RED)
             elif grid[l,c] == 3 : #couloir
                 draw_cell(pos, GREY)
-            elif grid[l,c] == 4 : #intérieur des salles
+            elif grid[l,c] == 4 or grid[l,c]>10 : #intérieur des salles et objets
                 draw_cell(pos, CYAN)
 
 clock = pygame.time.Clock()
