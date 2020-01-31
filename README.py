@@ -5,7 +5,7 @@ import pygame
 from pygame.locals import *
 import random
 import numpy as np
-
+from classes import *
 pygame.init()
 
 for event in pygame.event.get():   
@@ -176,7 +176,7 @@ def draw_level(Grid):
             elif grid[l,c] == 14 : 
                 draw_cell(pos, GREY)
             elif grid[l,c] == 15 : 
-                draw_cell(pos, BLACK)
+                draw_cell(pos, DARK_RED)
 
 
 clock = pygame.time.Clock()
