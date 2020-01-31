@@ -25,6 +25,7 @@ CYAN = (158, 255, 238)
 PURPLE = (121, 28, 248)
 BROWN = (167, 103, 38)
 
+
 ## Grid 
 CELL_SIZE = (10, 10)
 CELL_NUMBER = (60, 120)
@@ -175,7 +176,6 @@ def draw_level(Grid):
                 draw_cell(pos, GREY)
             elif grid[l,c] == 15 : 
                 draw_cell(pos, BLACK)
-
 
 
 clock = pygame.time.Clock()
