@@ -13,6 +13,16 @@ WHITE = (255, 255, 255)
 YELLOW = (255, 255, 0)
 RED = (255, 0, 0)
 
+CELL_SIZE = (10, 10)
+
+def draw_cell(pos, color=WHITE):
+  x,y=pos
+  for line in range(CELL_SIZE[1]):
+    for col in range(CELL_SIZE[0]):
+      #itertools product
+      screen_pos=(CELL_SIZE[0]*x+col, CELL_SIZE[1]*y+line)
+      screen.set_at(screen_pos,color)
+
 clock = pygame.time.Clock()
 name = input("Enter the name of your character : ")
 
@@ -32,15 +42,17 @@ while running:
     if event.key == K_q:
       sys.exit()
       # on quitte le programme lors d'un appui sur Q
+  if t>200:
+    t=0
+    pos = 1, 1
+    draw_cell(pos)
+    pygame.display.update()
     
 
 
 class Niveau:
     def __init__(self):
         self.nbre_pieces = random.randint(3, 7)
-        
-
-
 
 
 class Monstre:
