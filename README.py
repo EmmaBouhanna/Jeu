@@ -26,6 +26,8 @@ while running:
   dt=clock.tick(60)
   t+=dt
   screen.fill(BLACK)
+
+
 class Monstre:
     def __init__(self,force,vie=True):
         self.force
