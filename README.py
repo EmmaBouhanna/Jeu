@@ -49,7 +49,7 @@ def draw_level(Grid):
 clock = pygame.time.Clock()
 name = input("Enter the name of your character : ")
 
-screen = pygame.display.set_mode((CELL_SIZE[0]*CELL_NUMBER[0], CELL_SIZE[1]*CELL_NUMBER[1]))
+screen = pygame.display.set_mode((CELL_SIZE[1]*CELL_NUMBER[1], CELL_SIZE[0]*CELL_NUMBER[0]))
 
 t=0
 FPS = 60 #nombre d'images par seconde
@@ -60,11 +60,6 @@ while running:
   dt=clock.tick(FPS)
   t+=dt
   screen.fill(BLACK)
-
-# Ceci ne fait pas partie de la classe a priori
-"""for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-        running = False   """
 
 for event in pygame.event.get(KEYDOWN):
     if event.key == K_q:
