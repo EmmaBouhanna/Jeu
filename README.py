@@ -38,17 +38,25 @@ while running:
   t+=dt
   screen.fill(BLACK)
 
+# Ceci ne fait pas partie de la classe a priori
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        running = False   
+
+'''
   for event in pygame.event.get(KEYDOWN):
     if event.key == K_q:
       # on quitte le programme lors d'un appui sur Q
       sys.exit()
+'''
 
   if t>200:
     t=0
     pos = 1, 1
     draw_cell(pos)
     pygame.display.update()
-    
+
+
 
 
 class Niveau:
@@ -139,18 +147,3 @@ class Personnage:
 
 
 
-# Ceci ne fait pas partie de la classe a priori
-for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-        running = False   
-    elif event.type == pygame.KEYDOWN:
-        if event.key == K_q:
-            running = False
-        elif event.key == K_UP:
-            dx, dy = (0, -1)
-        elif event.key == K_RIGHT:
-            dx, dy = (1, 0)
-        elif event.key == K_DOWN:
-            dx, dy = (0, 1)
-        elif event.key == K_LEFT:
-            dx, dy = (-1, 0)
