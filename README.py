@@ -20,11 +20,66 @@ YELLOW = (255, 255, 0)
 # Grid 
 CELL_SIZE = (10, 10)
 CELL_NUMBER = (60, 120)
+grid = np.zeros((60,120))#salle1
+   
+for i in range (3,23):
+    grid[2,i]=1
+    grid[5,i]=1
+grid[3,3]=1
+grid[4,3]=1
+grid[4,22]=1
+grid[3,22]=2
 
-Grid = np.zeros(CELL_NUMBER)
+for i in range(28,70): #salle2
+    grid[15,i]=1
+    grid[30,i] = 1
+for j in range (15,31):
+    grid[j,28] = 1
+    grid[j,69] = 1
+grid[15,33]=2
+grid[15,68]=2
+grid[30,55]=2
+for k in range(22,34):
+    grid[3,k]=3
+for l in range(3,16):
+    grid[l,33]=3
 
-for i in range(10):
-    Grid[3,i]=1
+
+for i in range(65, 91):
+    grid[1,i]=1
+    grid[13,i]=1
+for j in range(1,14):
+    grid[j,65]=1
+    grid[j,90]=1
+grid[13,68]=2
+for k in range(13,16):
+    grid[k,68]=3
+
+for j in range(38, 54):
+    grid[j,40]=1
+    grid[j,65]=1
+for i in range(40,66):
+    grid[38,i]=1
+    grid[53,i]=1
+grid[38,55]=2
+grid[40,65]=2
+for k in range(30,39):
+    grid[k,55]=3
+
+for i in range (80,111):
+    grid[35,i]=1
+    grid[45,i]=1
+for j in range(35,46):
+    grid[j,80]=1
+    grid[j,110]=1
+grid[40,80] = 2
+grid[35,83] = 2
+for k in range(65,81):
+    grid[40,k]=3
+for k in range(33,36):
+    grid[k,83]=3
+for l in range(55,84):
+    grid[33,l]=3
 
 def draw_cell(pos, color=WHITE):
   x,y=pos
@@ -65,72 +120,13 @@ for event in pygame.event.get():
     if event.type == pygame.QUIT:
         running = False   
 
-  for event in pygame.event.get(KEYDOWN):
 for event in pygame.event.get(KEYDOWN):
     if event.key == K_q:
       # on quitte le programme lors d'un appui sur Q
-t =203
+
 if t>200:
     t=0
-    grid = np.zeros((60,120))#salle1
-    for i in range (3,23):
-        grid[2,i]=1
-        grid[5,i]=1
-    grid[3,3]=1
-    grid[4,3]=1
-    grid[4,22]=1
-    grid[3,22]=2
-
-    for i in range(28,70): #salle2
-        grid[15,i]=1
-        grid[30,i] = 1
-    for j in range (15,31):
-        grid[j,28] = 1
-        grid[j,69] = 1
-    grid[15,33]=2
-    grid[15,68]=2
-    grid[30,55]=2
-    for k in range(22,34):
-        grid[3,k]=3
-    for l in range(3,16):
-        grid[l,33]=3
-
-
-    for i in range(65, 91):
-        grid[1,i]=1
-        grid[13,i]=1
-    for j in range(1,14):
-        grid[j,65]=1
-        grid[j,90]=1
-    grid[13,68]=2
-    for k in range(13,16):
-        grid[k,68]=3
     
-    for j in range(38, 54):
-        grid[j,40]=1
-        grid[j,65]=1
-    for i in range(40,66):
-        grid[38,i]=1
-        grid[53,i]=1
-    grid[38,55]=2
-    grid[40,65]=2
-    for k in range(30,39):
-        grid[k,55]=3
-    
-    for i in range (80,111):
-        grid[35,i]=1
-        grid[45,i]=1
-    for j in range(35,46):
-        grid[j,80]=1
-        grid[j,110]=1
-    grid[40,80] = 2
-    grid[35,83] = 2
-    for k in range(65,81):
-        grid[40,k]=3
-    for k in range(33,36):
-        grid[k,83]=3
-    for l in range(55,84):
-        grid[33,l]=3
     print(grid)
     for i in range()
     draw_cell(1,1)
