@@ -105,7 +105,7 @@ for l in range(56,84):
 
 #les potions
 
-a = 5
+a = 3
 while a>0:
     (i,j)=(random.randint(0,59),random.randint(0,119))
     if grid[i,j]==4:
@@ -113,14 +113,14 @@ while a>0:
         a=a-1
 
 #nourriture
-b = 5
+b = 3
 while b>0:
     (i,j)=(random.randint(0,59),random.randint(0,119))
     if grid[i,j]==4:
         grid[i,j]=12
         b=b-1
 #argent
-c = 5
+c = 2
 while c>0:
     (i,j)=(random.randint(0,59),random.randint(0,119))
     if grid[i,j]==4:
@@ -128,14 +128,14 @@ while c>0:
         c=c-1
 
 #armure
-d = 5
+d = 1
 while d>0:
     (i,j)=(random.randint(0,59),random.randint(0,119))
     if grid[i,j]==4:
         grid[i,j]=14
         d=d-1
 #arme
-e = 5
+e = 1
 while e>0:
     (i,j)=(random.randint(0,59),random.randint(0,119))
     if grid[i,j]==4:
